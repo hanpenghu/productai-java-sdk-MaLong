@@ -31,6 +31,8 @@ public class RequestHelper {
 
         URL url = new URL(api);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setConnectTimeout(20000);
+        connection.setReadTimeout(20000);
         connection.setDoOutput(true);
         connection.setDoInput(true);
         connection.setRequestMethod(request.getRequestMethodHeader());
